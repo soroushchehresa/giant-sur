@@ -33,7 +33,7 @@ const Desktop = () => {
         break
     }
 
-    return <img className="w-12" src={iconSrc} />
+    return <img alt="dock item logo" className="w-12" src={iconSrc} />
   }
   return (
     <div className="flex flex-col items-end fixed left-0 top-0 h-screen w-screen border-box pt-6">
