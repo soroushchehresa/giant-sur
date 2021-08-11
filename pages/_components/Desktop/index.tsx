@@ -1,3 +1,5 @@
+import { title } from 'process'
+
 const desktopItems: { type: string; title: string }[] = [
   {
     type: 'Disc',
@@ -36,7 +38,7 @@ const Desktop = () => {
   return (
     <div className="flex flex-col items-end fixed left-0 top-0 h-screen w-screen border-box pt-6">
       {desktopItems.map((item: { type: string; title: string }) => (
-        <button className="w-32 flex flex-col items-center my-4">
+        <button key={title} className="w-32 flex flex-col items-center my-4">
           {renderItemIcon(item.type)}
           <h3 className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm">
             {item.title}
