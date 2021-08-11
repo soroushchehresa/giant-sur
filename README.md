@@ -1,5 +1,5 @@
 # Giant Sur
-A simple UI web clone of [macOS Big Sur](https://www.apple.com/macos/big-sur) built with [React](https://reactjs.org), [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), and [Tailwind CSS](https://tailwindcss.com).
+A simple UI clone of [macOS Big Sur](https://www.apple.com/macos/big-sur) for the web built with [React](https://reactjs.org), [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), and [Tailwind CSS](https://tailwindcss.com).
 
 <br>
 
