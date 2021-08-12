@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Desktop component Should renders properly 1`] = `
+<div
+  className="flex flex-col items-end fixed left-0 top-0 h-screen w-screen border-box pt-6"
+>
+  <button
+    className="w-32 flex flex-col items-center my-4"
+    key="/usr/local/bin/node"
+  >
+    <img
+      alt="dock item logo"
+      className="w-12"
+      src="/images/disk-icon.png"
+    />
+    <h3
+      className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm"
+    >
+      Macintosh HD
+    </h3>
+  </button>
+  <button
+    className="w-32 flex flex-col items-center my-4"
+    key="/usr/local/bin/node"
+  >
+    <img
+      alt="dock item logo"
+      className="w-12"
+      src="/images/folder-icon.png"
+    />
+    <h3
+      className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm"
+    >
+      Giant Sur
+    </h3>
+  </button>
+  <button
+    className="w-32 flex flex-col items-center my-4"
+    key="/usr/local/bin/node"
+  >
+    <img
+      alt="dock item logo"
+      className="w-12"
+      src="/images/pdf-icon.png"
+    />
+    <h3
+      className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm"
+    >
+      Example.pdf
+    </h3>
+  </button>
+</div>
+`;

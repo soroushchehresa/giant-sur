@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dock component Should renders properly 1`] = `
+<div
+  className="flex h-16 flex-row justify-center items-end bg-white fixed bottom-2 left-0 right-0 px-2 bg-opacity-10 w-max m-auto rounded-xl"
+>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Finder"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/finder-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Safari"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/safari-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Messages"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/messages-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Music"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/music-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Mail"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/mail-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Photos"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/photos-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Contacts"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/contacts-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Calendar"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/calendar-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Stocks"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/stocks-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Facetime"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/facetime-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Maps"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/maps-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Note"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/note-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Settings"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/settings-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="Reminders"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/reminders-logo.png"
+    />
+  </button>
+  <button
+    className="w-16 align-bottom dock-item p-2"
+    key="News"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "transition": "all ease .2s",
+      }
+    }
+  >
+    <img
+      alt="dock icon"
+      className="w-full"
+      src="images/news-logo.png"
+    />
+  </button>
+</div>
+`;

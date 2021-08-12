@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuBar component Should renders properly 1`] = `
+<Fragment>
+  <head>
+    <title>
+      Giant Sur
+    </title>
+  </head>
+  <div
+    className="flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 px-6 bg-opacity-40"
+  >
+    <div
+      className="flex items-center"
+    >
+      <button>
+        <img
+          alt="apple icon"
+          className="w-3.5"
+          src="images/apple-logo.png"
+        />
+      </button>
+      <button
+        className="ml-6 mr-6"
+      >
+        <span
+          className="font-bold text-white text-sm"
+        >
+          Finder
+        </span>
+      </button>
+      <div>
+        <button
+          className="mr-5 text-sm"
+          key="File"
+        >
+          <span
+            className="text-white"
+          >
+            File
+          </span>
+        </button>
+        <button
+          className="mr-5 text-sm"
+          key="Edit"
+        >
+          <span
+            className="text-white"
+          >
+            Edit
+          </span>
+        </button>
+        <button
+          className="mr-5 text-sm"
+          key="View"
+        >
+          <span
+            className="text-white"
+          >
+            View
+          </span>
+        </button>
+        <button
+          className="mr-5 text-sm"
+          key="Go"
+        >
+          <span
+            className="text-white"
+          >
+            Go
+          </span>
+        </button>
+        <button
+          className="mr-5 text-sm"
+          key="Window"
+        >
+          <span
+            className="text-white"
+          >
+            Window
+          </span>
+        </button>
+        <button
+          className="mr-5 text-sm"
+          key="Help"
+        >
+          <span
+            className="text-white"
+          >
+            Help
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      className="flex flex-row justify-center items-center"
+    >
+      <button
+        className="w-7 mr-5"
+      >
+        <img
+          alt="menubar icon"
+          className="w-full"
+          src="/images/battery-icon.png"
+        />
+      </button>
+      <button
+        className="w-4 mr-5"
+      >
+        <img
+          alt="menubar icon"
+          className="w-full"
+          src="/images/wifi-icon.png"
+        />
+      </button>
+      <button
+        className="w-4 mr-5"
+      >
+        <img
+          alt="menubar icon"
+          className="w-full"
+          src="/images/magnifier-icon.png"
+        />
+      </button>
+      <button
+        className="w-3.5 mr-5"
+      >
+        <img
+          alt="menubar icon"
+          className="w-full"
+          src="/images/control-center-icon.png"
+        />
+      </button>
+      <button
+        className="w-3.5 mr-5"
+      >
+        <img
+          alt="menubar icon"
+          className="w-full"
+          src="/images/siri-logo.png"
+        />
+      </button>
+      <button
+        className="flex flex-row justify-center items-center"
+      >
+        <p
+          className="text-sm text-white mr-2"
+        >
+          Mon Aug 9
+        </p>
+        <p
+          className="text-sm text-white"
+        >
+          10:36 PM
+        </p>
+      </button>
+    </div>
+  </div>
+</Fragment>
+`;
