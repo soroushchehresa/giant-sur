@@ -8,15 +8,21 @@ const MenuBar = () => (
     <div className="flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 px-6 bg-opacity-40">
       <div className="flex items-center">
         <button>
-          <img alt="apple icon" className="w-3.5" src="images/apple-logo.png" />
+          <img
+            alt="apple icon"
+            className="w-3.5 select-none"
+            src="images/apple-logo.png"
+          />
         </button>
         <button className="ml-6 mr-6">
-          <span className="font-bold text-white text-sm">Finder</span>
+          <span className="font-bold text-white text-sm select-none">
+            Finder
+          </span>
         </button>
         <div>
           {menuItems.map((item: string) => (
             <button key={item} className="mr-5 text-sm">
-              <span className="text-white">{item}</span>
+              <span className="text-white select-none">{item}</span>
             </button>
           ))}
         </div>
@@ -25,41 +31,41 @@ const MenuBar = () => (
         <button className="w-7 mr-5">
           <img
             alt="menubar icon"
-            className="w-full"
+            className="w-full select-none"
             src="/images/battery-icon.png"
           />
         </button>
         <button className="w-4 mr-5">
           <img
             alt="menubar icon"
-            className="w-full"
+            className="w-full select-none"
             src="/images/wifi-icon.png"
           />
         </button>
         <button className="w-4 mr-5">
           <img
             alt="menubar icon"
-            className="w-full"
+            className="w-full select-none"
             src="/images/magnifier-icon.png"
           />
         </button>
         <button className="w-3.5 mr-5">
           <img
             alt="menubar icon"
-            className="w-full"
+            className="w-full select-none"
             src="/images/control-center-icon.png"
           />
         </button>
         <button className="w-3.5 mr-5">
           <img
             alt="menubar icon"
-            className="w-full"
+            className="w-full select-none"
             src="/images/siri-logo.png"
           />
         </button>
         <button className="flex flex-row justify-center items-center">
-          <p className="text-sm text-white mr-2">Mon Aug 9</p>
-          <p className="text-sm text-white">10:36 PM</p>
+          <p className="select-none text-sm text-white mr-2">Mon Aug 9</p>
+          <p className="select-none text-sm text-white">10:36 PM</p>
         </button>
       </div>
     </div>

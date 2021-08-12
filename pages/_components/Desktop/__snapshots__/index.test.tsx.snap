@@ -3,48 +3,67 @@
 exports[`Desktop component Should renders properly 1`] = `
 <div
   className="flex flex-col items-end fixed left-0 top-0 h-screen w-screen border-box pt-6"
+  onClick={[Function]}
 >
   <button
-    className="w-32 flex flex-col items-center my-4"
-    key="/usr/local/bin/node"
+    className="w-32 flex flex-col items-center my-2 p-1"
+    data-testid="desktop-item-1"
+    key="1"
+    onClick={[Function]}
   >
-    <img
-      alt="dock item logo"
-      className="w-12"
-      src="/images/disk-icon.png"
-    />
+    <div
+      className="image-wrapper rounded-md border-2 border-transparent border-box px-1 py-2 bg-opacity-20"
+    >
+      <img
+        alt="select-none dock item logo"
+        className="w-12"
+        src="/images/disk-icon.png"
+      />
+    </div>
     <h3
-      className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm"
+      className="select-none text-xs text-white font-bold whitespace-nowrap text-center mt-0.5 text-shadow-sm pl-2 pr-2 pt-0.5 pb-0.5 rounded-md"
     >
       Macintosh HD
     </h3>
   </button>
   <button
-    className="w-32 flex flex-col items-center my-4"
-    key="/usr/local/bin/node"
+    className="w-32 flex flex-col items-center my-2 p-1"
+    data-testid="desktop-item-2"
+    key="2"
+    onClick={[Function]}
   >
-    <img
-      alt="dock item logo"
-      className="w-12"
-      src="/images/folder-icon.png"
-    />
+    <div
+      className="image-wrapper rounded-md border-2 border-transparent border-box px-1 py-2 bg-opacity-20"
+    >
+      <img
+        alt="select-none dock item logo"
+        className="w-12"
+        src="/images/folder-icon.png"
+      />
+    </div>
     <h3
-      className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm"
+      className="select-none text-xs text-white font-bold whitespace-nowrap text-center mt-0.5 text-shadow-sm pl-2 pr-2 pt-0.5 pb-0.5 rounded-md"
     >
       Giant Sur
     </h3>
   </button>
   <button
-    className="w-32 flex flex-col items-center my-4"
-    key="/usr/local/bin/node"
+    className="w-32 flex flex-col items-center my-2 p-1"
+    data-testid="desktop-item-3"
+    key="3"
+    onClick={[Function]}
   >
-    <img
-      alt="dock item logo"
-      className="w-12"
-      src="/images/pdf-icon.png"
-    />
+    <div
+      className="image-wrapper rounded-md border-2 border-transparent border-box px-1 py-2 bg-opacity-20"
+    >
+      <img
+        alt="select-none dock item logo"
+        className="w-12"
+        src="/images/pdf-icon.png"
+      />
+    </div>
     <h3
-      className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm"
+      className="select-none text-xs text-white font-bold whitespace-nowrap text-center mt-0.5 text-shadow-sm pl-2 pr-2 pt-0.5 pb-0.5 rounded-md"
     >
       Example.pdf
     </h3>

@@ -155,7 +155,7 @@ const Dock = () => {
           onMouseEnter={() => handleMouseEnter(i)}
           onMouseLeave={() => handleMouseLeave(i)}
         >
-          <img alt="dock icon" className="w-full" src={item.logo} />
+          <img alt="dock icon" className="select-none w-full" src={item.logo} />
         </button>
       ))}
     </div>

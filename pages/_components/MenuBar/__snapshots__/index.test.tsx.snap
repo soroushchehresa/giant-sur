@@ -16,7 +16,7 @@ exports[`MenuBar component Should renders properly 1`] = `
       <button>
         <img
           alt="apple icon"
-          className="w-3.5"
+          className="w-3.5 select-none"
           src="images/apple-logo.png"
         />
       </button>
@@ -24,7 +24,7 @@ exports[`MenuBar component Should renders properly 1`] = `
         className="ml-6 mr-6"
       >
         <span
-          className="font-bold text-white text-sm"
+          className="font-bold text-white text-sm select-none"
         >
           Finder
         </span>
@@ -35,7 +35,7 @@ exports[`MenuBar component Should renders properly 1`] = `
           key="File"
         >
           <span
-            className="text-white"
+            className="text-white select-none"
           >
             File
           </span>
@@ -45,7 +45,7 @@ exports[`MenuBar component Should renders properly 1`] = `
           key="Edit"
         >
           <span
-            className="text-white"
+            className="text-white select-none"
           >
             Edit
           </span>
@@ -55,7 +55,7 @@ exports[`MenuBar component Should renders properly 1`] = `
           key="View"
         >
           <span
-            className="text-white"
+            className="text-white select-none"
           >
             View
           </span>
@@ -65,7 +65,7 @@ exports[`MenuBar component Should renders properly 1`] = `
           key="Go"
         >
           <span
-            className="text-white"
+            className="text-white select-none"
           >
             Go
           </span>
@@ -75,7 +75,7 @@ exports[`MenuBar component Should renders properly 1`] = `
           key="Window"
         >
           <span
-            className="text-white"
+            className="text-white select-none"
           >
             Window
           </span>
@@ -85,7 +85,7 @@ exports[`MenuBar component Should renders properly 1`] = `
           key="Help"
         >
           <span
-            className="text-white"
+            className="text-white select-none"
           >
             Help
           </span>
@@ -100,7 +100,7 @@ exports[`MenuBar component Should renders properly 1`] = `
       >
         <img
           alt="menubar icon"
-          className="w-full"
+          className="w-full select-none"
           src="/images/battery-icon.png"
         />
       </button>
@@ -109,7 +109,7 @@ exports[`MenuBar component Should renders properly 1`] = `
       >
         <img
           alt="menubar icon"
-          className="w-full"
+          className="w-full select-none"
           src="/images/wifi-icon.png"
         />
       </button>
@@ -118,7 +118,7 @@ exports[`MenuBar component Should renders properly 1`] = `
       >
         <img
           alt="menubar icon"
-          className="w-full"
+          className="w-full select-none"
           src="/images/magnifier-icon.png"
         />
       </button>
@@ -127,7 +127,7 @@ exports[`MenuBar component Should renders properly 1`] = `
       >
         <img
           alt="menubar icon"
-          className="w-full"
+          className="w-full select-none"
           src="/images/control-center-icon.png"
         />
       </button>
@@ -136,7 +136,7 @@ exports[`MenuBar component Should renders properly 1`] = `
       >
         <img
           alt="menubar icon"
-          className="w-full"
+          className="w-full select-none"
           src="/images/siri-logo.png"
         />
       </button>
@@ -144,12 +144,12 @@ exports[`MenuBar component Should renders properly 1`] = `
         className="flex flex-row justify-center items-center"
       >
         <p
-          className="text-sm text-white mr-2"
+          className="select-none text-sm text-white mr-2"
         >
           Mon Aug 9
         </p>
         <p
-          className="text-sm text-white"
+          className="select-none text-sm text-white"
         >
           10:36 PM
         </p>

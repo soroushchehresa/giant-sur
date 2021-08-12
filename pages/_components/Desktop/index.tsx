@@ -1,22 +1,33 @@
-import { title } from 'process'
+import { useState, MouseEvent } from 'react'
 
-const desktopItems: { type: string; title: string }[] = [
+interface DesktopItem {
+  id: string
+  type: string
+  title: string
+}
+
+const desktopItems: DesktopItem[] = [
   {
+    id: '1',
     type: 'Disc',
     title: 'Macintosh HD',
   },
   {
+    id: '2',
     type: 'Folder',
     title: 'Giant Sur',
   },
   {
+    id: '3',
     type: 'PDF',
     title: 'Example.pdf',
   },
 ]
 
 const Desktop = () => {
-  const renderItemIcon = (type: string) => {
+  const [focusedDesktopItem, setFocusedDesktopItem] = useState<string>('')
+
+  const renderItemIcon = (type: string, active: boolean) => {
     let iconSrc: string = ''
 
     switch (type) {
@@ -33,14 +44,44 @@ const Desktop = () => {
         break
     }
 
-    return <img alt="dock item logo" className="w-12" src={iconSrc} />
+    return (
+      <div
+        className={`image-wrapper rounded-md border-2 border-transparent border-box px-1 py-2 bg-opacity-20${
+          active ? ' bg-gray-900 border-gray-500' : ''
+        }`}
+      >
+        <img alt="select-none dock item logo" className="w-12" src={iconSrc} />
+      </div>
+    )
   }
+
+  const handleClickDesktopItems = (e: MouseEvent<HTMLElement>, id: string) => {
+    e.stopPropagation()
+    setFocusedDesktopItem(id)
+  }
+
+  const handleClickAroundDesktopItems = () => {
+    setFocusedDesktopItem('')
+  }
+
   return (
-    <div className="flex flex-col items-end fixed left-0 top-0 h-screen w-screen border-box pt-6">
-      {desktopItems.map((item: { type: string; title: string }) => (
-        <button key={title} className="w-32 flex flex-col items-center my-4">
-          {renderItemIcon(item.type)}
-          <h3 className="text-xs text-white font-bold whitespace-nowrap text-center mt-2 text-shadow-sm">
+    <div
+      className="flex flex-col items-end fixed left-0 top-0 h-screen w-screen border-box pt-6"
+      onClick={handleClickAroundDesktopItems}
+    >
+      {desktopItems.map((item: DesktopItem, i: number) => (
+        <button
+          data-testid={`desktop-item-${i + 1}`}
+          key={item.id}
+          className="w-32 flex flex-col items-center my-2 p-1"
+          onClick={(e) => handleClickDesktopItems(e, item.id)}
+        >
+          {renderItemIcon(item.type, focusedDesktopItem === item.id)}
+          <h3
+            className={`select-none text-xs text-white font-bold whitespace-nowrap text-center mt-0.5 text-shadow-sm pl-2 pr-2 pt-0.5 pb-0.5 rounded-md${
+              focusedDesktopItem === item.id ? ' bg-blue-700' : ''
+            }`}
+          >
             {item.title}
           </h3>
         </button>
