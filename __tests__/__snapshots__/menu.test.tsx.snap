@@ -2,6 +2,6 @@
 
 exports[`MenuBar -> Menu component Should renders properly 1`] = `
 <div
-  className="absolute bg-gray-700 bg-opacity-50 p-1 rounded-md left-0 border border-gray-500 border-box"
+  className="absolute bg-gray-700 bg-opacity-50 p-1 rounded-md left-0 border border-gray-500 border-box top-5"
 />
 `;

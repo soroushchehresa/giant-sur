@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow, ShallowWrapper } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
-import App from './index'
+import App from '../pages/_components/Desktop/index'
 
-describe('Dock component', () => {
+describe('Desktop component', () => {
   let app: ShallowWrapper
 
   beforeEach(() => {

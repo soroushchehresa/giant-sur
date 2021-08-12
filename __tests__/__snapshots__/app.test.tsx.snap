@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home page Should renders properly 1`] = `
+exports[`App Should renders properly 1`] = `
 <div
   className="flex mx-auto w-screen h-screen bg-wallpaper bg-cover overflow-hidden"
 >
