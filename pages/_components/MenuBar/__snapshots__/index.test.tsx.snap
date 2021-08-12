@@ -1,160 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MenuBar component Should renders properly 1`] = `
-<Fragment>
-  <head>
-    <title>
-      Giant Sur
-    </title>
-  </head>
+<div
+  className="border-box flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 bg-opacity-40 border-b border-gray-500 z-10"
+>
   <div
-    className="flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 px-6 bg-opacity-40"
+    className="flex items-center"
   >
-    <div
-      className="flex items-center"
+    <button
+      className="pl-4 pr-1 ml-1.5 rounded-sm relative cursor-pointer"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
-      <button>
-        <img
-          alt="apple icon"
-          className="w-3.5 select-none"
-          src="images/apple-logo.png"
-        />
-      </button>
+      <img
+        alt="apple icon"
+        className="w-3.5"
+        src="images/apple-logo.png"
+      />
+    </button>
+    <button
+      className="pl-4 relative"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <span
+        className="font-bold text-white text-sm"
+      >
+        Finder
+      </span>
+    </button>
+    <div>
       <button
-        className="ml-6 mr-6"
+        className="pl-5 text-sm relative"
+        key="File"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         <span
-          className="font-bold text-white text-sm select-none"
+          className="text-white"
         >
-          Finder
+          File
         </span>
       </button>
-      <div>
-        <button
-          className="mr-5 text-sm"
-          key="File"
-        >
-          <span
-            className="text-white select-none"
-          >
-            File
-          </span>
-        </button>
-        <button
-          className="mr-5 text-sm"
-          key="Edit"
-        >
-          <span
-            className="text-white select-none"
-          >
-            Edit
-          </span>
-        </button>
-        <button
-          className="mr-5 text-sm"
-          key="View"
-        >
-          <span
-            className="text-white select-none"
-          >
-            View
-          </span>
-        </button>
-        <button
-          className="mr-5 text-sm"
-          key="Go"
-        >
-          <span
-            className="text-white select-none"
-          >
-            Go
-          </span>
-        </button>
-        <button
-          className="mr-5 text-sm"
-          key="Window"
-        >
-          <span
-            className="text-white select-none"
-          >
-            Window
-          </span>
-        </button>
-        <button
-          className="mr-5 text-sm"
-          key="Help"
-        >
-          <span
-            className="text-white select-none"
-          >
-            Help
-          </span>
-        </button>
-      </div>
-    </div>
-    <div
-      className="flex flex-row justify-center items-center"
-    >
       <button
-        className="w-7 mr-5"
+        className="pl-5 text-sm relative"
+        key="Edit"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        <img
-          alt="menubar icon"
-          className="w-full select-none"
-          src="/images/battery-icon.png"
-        />
+        <span
+          className="text-white"
+        >
+          Edit
+        </span>
       </button>
       <button
-        className="w-4 mr-5"
+        className="pl-5 text-sm relative"
+        key="View"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        <img
-          alt="menubar icon"
-          className="w-full select-none"
-          src="/images/wifi-icon.png"
-        />
-      </button>
-      <button
-        className="w-4 mr-5"
-      >
-        <img
-          alt="menubar icon"
-          className="w-full select-none"
-          src="/images/magnifier-icon.png"
-        />
-      </button>
-      <button
-        className="w-3.5 mr-5"
-      >
-        <img
-          alt="menubar icon"
-          className="w-full select-none"
-          src="/images/control-center-icon.png"
-        />
-      </button>
-      <button
-        className="w-3.5 mr-5"
-      >
-        <img
-          alt="menubar icon"
-          className="w-full select-none"
-          src="/images/siri-logo.png"
-        />
-      </button>
-      <button
-        className="flex flex-row justify-center items-center"
-      >
-        <p
-          className="select-none text-sm text-white mr-2"
+        <span
+          className="text-white"
         >
-          Mon Aug 9
-        </p>
-        <p
-          className="select-none text-sm text-white"
+          View
+        </span>
+      </button>
+      <button
+        className="pl-5 text-sm relative"
+        key="Go"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <span
+          className="text-white"
         >
-          10:36 PM
-        </p>
+          Go
+        </span>
+      </button>
+      <button
+        className="pl-5 text-sm relative"
+        key="Window"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <span
+          className="text-white"
+        >
+          Window
+        </span>
+      </button>
+      <button
+        className="pl-5 text-sm relative"
+        key="Help"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <span
+          className="text-white"
+        >
+          Help
+        </span>
       </button>
     </div>
   </div>
-</Fragment>
+  <div
+    className="flex flex-row justify-center items-center"
+  >
+    <button
+      className="w-7 mr-5"
+    >
+      <img
+        alt="menubar icon"
+        className="w-full"
+        src="/images/battery-icon.png"
+      />
+    </button>
+    <button
+      className="w-4 mr-5"
+    >
+      <img
+        alt="menubar icon"
+        className="w-full"
+        src="/images/wifi-icon.png"
+      />
+    </button>
+    <button
+      className="w-4 mr-5"
+    >
+      <img
+        alt="menubar icon"
+        className="w-full"
+        src="/images/magnifier-icon.png"
+      />
+    </button>
+    <button
+      className="w-3.5 mr-5"
+    >
+      <img
+        alt="menubar icon"
+        className="w-full"
+        src="/images/control-center-icon.png"
+      />
+    </button>
+    <button
+      className="w-3.5 mr-5"
+    >
+      <img
+        alt="menubar icon"
+        className="w-full"
+        src="/images/siri-logo.png"
+      />
+    </button>
+    <button
+      className="flex flex-row justify-center items-center"
+    >
+      <p
+        className="text-sm text-white mr-2"
+      >
+        Mon Aug 9
+      </p>
+      <p
+        className="text-sm text-white mr-5"
+      >
+        10:36 PM
+      </p>
+    </button>
+  </div>
+</div>
 `;
