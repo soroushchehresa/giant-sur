@@ -1,4 +1,4 @@
-const requestAnimationFrame = global.requestAnimationFrame = callback => {
+const requestAnimationFrame = (global as any).requestAnimationFrame = (callback :any) => {
   setTimeout(callback, 0);
 };
 
