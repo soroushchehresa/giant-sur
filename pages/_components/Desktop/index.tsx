@@ -46,8 +46,8 @@ const Desktop = () => {
 
     return (
       <div
-        className={`image-wrapper rounded-md border-2 border-transparent border-box px-1 pt-2 pb-2${
-          active ? ' bg-gray-900 border-gray-500 bg-opacity-30' : ''
+        className={`image-wrapper rounded-md border-2 border-transparent border-box px-1 py-2 ${
+          active ? 'bg-gray-900 border-gray-500 bg-opacity-30' : ''
         }`}
       >
         <img alt="select-none dock item logo" className="w-12" src={iconSrc} />
