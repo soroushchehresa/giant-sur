@@ -46,7 +46,7 @@ const Desktop = () => {
 
     return (
       <div
-        className={`image-wrapper rounded-md border-2 border-transparent border-box px-1 py-2 bg-opacity-20${
+        className={`image-wrapper rounded-md border-2 border-transparent border-box px-1 py-2 bg-opacity-30${
           active ? ' bg-gray-900 border-gray-500' : ''
         }`}
       >
