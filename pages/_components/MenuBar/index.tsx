@@ -1,18 +1,29 @@
-import { useState } from 'react'
+import { useState, useContext, useEffect, MouseEvent } from 'react'
+import { AppContext } from '../../index'
 import Menu from './_components/Menu'
 
 const menuItems: string[] = ['File', 'Edit', 'View', 'Go', 'Window', 'Help']
 
 const MenuBar = () => {
   const [currentActiveMenu, setCurrentActiveMenu] = useState<string>('')
+  const { desktopClickHash, updateDesktopClickHash } = useContext(AppContext)
+
+  useEffect(() => {
+    setCurrentActiveMenu('')
+  }, [desktopClickHash])
+
   return (
-    <div className="border-box flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 bg-opacity-40 border-b border-gray-500 z-10">
+    <div
+      onClick={updateDesktopClickHash}
+      className="border-box flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 bg-opacity-40 border-b border-gray-500 z-10"
+    >
       <div className="flex items-center">
         <button
           className="pl-4 pr-1 ml-1.5 rounded-sm relative cursor-pointer"
-          onClick={() =>
+          onClick={(e: MouseEvent<HTMLElement>) => {
+            e.stopPropagation()
             setCurrentActiveMenu((past) => (past !== 'Apple' ? 'Apple' : ''))
-          }
+          }}
           onMouseEnter={() => {
             if (currentActiveMenu && currentActiveMenu !== 'Apple') {
               setCurrentActiveMenu('Apple')
@@ -80,9 +91,10 @@ const MenuBar = () => {
         </button>
         <button
           className="pl-4 relative"
-          onClick={() =>
+          onClick={(e: MouseEvent<HTMLElement>) => {
+            e.stopPropagation()
             setCurrentActiveMenu((past) => (past !== 'Finder' ? 'Finder' : ''))
-          }
+          }}
           onMouseEnter={() => {
             if (currentActiveMenu && currentActiveMenu !== 'Finder') {
               setCurrentActiveMenu('Finder')
@@ -138,9 +150,10 @@ const MenuBar = () => {
             <button
               key={item}
               className="pl-5 text-sm relative"
-              onClick={() =>
+              onClick={(e: MouseEvent<HTMLElement>) => {
+                e.stopPropagation()
                 setCurrentActiveMenu((past) => (past !== item ? item : ''))
-              }
+              }}
               onMouseEnter={() => {
                 if (currentActiveMenu && currentActiveMenu !== item) {
                   setCurrentActiveMenu(item)

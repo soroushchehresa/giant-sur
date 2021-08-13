@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useRef, useContext } from 'react'
+import { AppContext } from '../../index'
 
 const dockButtons: { title: string; logo: string }[] = [
   {
@@ -65,8 +66,9 @@ const dockButtons: { title: string; logo: string }[] = [
 
 const Dock = () => {
   const dockButtonsWrapper: any = useRef()
+  const { updateDesktopClickHash } = useContext(AppContext)
 
-  const handleMouseEnter = (itemIndex: number) => {
+  const handleItemsMouseEnter = (itemIndex: number) => {
     const expandSize = 8
 
     dockButtonsWrapper.current.children[
@@ -104,7 +106,7 @@ const Dock = () => {
     }
   }
 
-  const handleMouseLeave = (itemIndex: number) => {
+  const handleItemsMouseLeave = (itemIndex: number) => {
     const unexpandSize = 4
 
     dockButtonsWrapper.current.children[
@@ -142,6 +144,10 @@ const Dock = () => {
     }
   }
 
+  const handleItemsClick = () => {
+    updateDesktopClickHash()
+  }
+
   return (
     <div
       ref={dockButtonsWrapper}
@@ -152,8 +158,9 @@ const Dock = () => {
           key={item.title}
           className="w-16 align-bottom dock-item p-2"
           style={{ transition: 'all ease .2s' }}
-          onMouseEnter={() => handleMouseEnter(i)}
-          onMouseLeave={() => handleMouseLeave(i)}
+          onMouseEnter={() => handleItemsMouseEnter(i)}
+          onMouseLeave={() => handleItemsMouseLeave(i)}
+          onClick={() => handleItemsClick()}
         >
           <img alt="dock icon" className="select-none w-full" src={item.logo} />
         </button>

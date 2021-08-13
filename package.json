@@ -12,7 +12,8 @@
   "dependencies": {
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.9",
@@ -21,6 +22,7 @@
     "@types/jest": "^27.0.0",
     "@types/react": "17.0.16",
     "@types/react-test-renderer": "^17.0.1",
+    "@types/uuid": "^8.3.1",
     "autoprefixer": "^10.3.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",

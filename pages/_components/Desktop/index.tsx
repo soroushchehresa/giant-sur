@@ -1,4 +1,5 @@
-import { useState, MouseEvent } from 'react'
+import { useState, MouseEvent, useContext } from 'react'
+import { AppContext } from '../../index'
 
 interface DesktopItem {
   id: string
@@ -26,6 +27,7 @@ const desktopItems: DesktopItem[] = [
 
 const Desktop = () => {
   const [focusedDesktopItem, setFocusedDesktopItem] = useState<string>('')
+  const { updateDesktopClickHash } = useContext(AppContext)
 
   const renderItemIcon = (type: string, active: boolean) => {
     let iconSrc: string = ''
@@ -58,10 +60,12 @@ const Desktop = () => {
   const handleClickDesktopItems = (e: MouseEvent<HTMLElement>, id: string) => {
     e.stopPropagation()
     setFocusedDesktopItem(id)
+    updateDesktopClickHash()
   }
 
   const handleClickAroundDesktopItems = () => {
     setFocusedDesktopItem('')
+    updateDesktopClickHash()
   }
 
   return (
