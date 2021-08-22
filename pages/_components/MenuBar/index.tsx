@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect, MouseEvent } from 'react'
+import moment from 'moment'
 import { AppContext } from '../../index'
 import Menu from './_components/Menu'
 
@@ -6,7 +7,47 @@ const menuItems: string[] = ['File', 'Edit', 'View', 'Go', 'Window', 'Help']
 
 const MenuBar = () => {
   const [currentActiveMenu, setCurrentActiveMenu] = useState<string>('')
+  const [time, setTime] = useState<string>('')
+  const [date, setDate] = useState<string>('')
   const { desktopClickHash, updateDesktopClickHash } = useContext(AppContext)
+
+  useEffect(() => {
+    const calculateDate = () => {
+      const currentDate = moment()
+      const dayName: string = currentDate.format('dddd').substring(0, 3)
+      const monthName: string = currentDate.format('MMM').substring(0, 3)
+      const dayOfMonth: string = currentDate.format('DD')
+      const newDate = `${dayName} ${monthName} ${dayOfMonth}`
+      setDate((prevDate: string) => {
+        if (prevDate !== newDate) {
+          return newDate
+        }
+        return prevDate
+      })
+    }
+
+    const calculateTime = () => {
+      const currentTime = moment()
+      const hour: string = currentTime.format('hh').substring(0, 3)
+      const minute: string = currentTime.format('mm').substring(0, 3)
+      const type: string = currentTime.format('A')
+      const newTime: string = `${hour}:${minute} ${type}`
+      setTime((prevTime: string) => {
+        if (prevTime !== newTime) {
+          return newTime
+        }
+        return prevTime
+      })
+    }
+
+    calculateDate()
+    calculateTime()
+
+    setInterval(() => {
+      calculateDate()
+      calculateTime()
+    }, 1000)
+  }, [])
 
   useEffect(() => {
     setCurrentActiveMenu('')
@@ -183,10 +224,10 @@ const MenuBar = () => {
         </div>
       </div>
       <div className="flex flex-row justify-center items-center">
-        <button className="w-7 mr-5">
+        <button className="w-8 h-5 mr-5 mt-0.5">
           <img
             alt="menubar icon"
-            className="w-full"
+            className="w-full h-full"
             src="/images/battery-icon.png"
           />
         </button>
@@ -219,8 +260,8 @@ const MenuBar = () => {
           />
         </button>
         <button className="flex flex-row justify-center items-center">
-          <p className="text-sm text-white mr-2">Mon Aug 9</p>
-          <p className="text-sm text-white mr-5">10:36 PM</p>
+          <p className="text-sm text-white mr-2">{date}</p>
+          <p className="text-sm text-white mr-5">{time}</p>
         </button>
       </div>
     </div>
