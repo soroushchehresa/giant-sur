@@ -3,6 +3,8 @@
 # 🍏 Giant Sur
 A simple UI clone of [macOS Big Sur](https://www.apple.com/macos/big-sur) for the web.
   
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8ffd6868-aa20-484b-8c69-5106588f4e4f/deploy-status)](https://app.netlify.com/sites/giantsur/deploys)
+  
 </div>
 
 <br>
