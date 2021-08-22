@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import Head from 'next/head'
 import { v4 as uuidv4 } from 'uuid'
 import MenuBar from './_components/MenuBar'
 import Dock from './_components/Dock'
@@ -21,6 +22,9 @@ const Home = () => {
   }
   return (
     <AppContext.Provider value={{ desktopClickHash, updateDesktopClickHash }}>
+      <Head>
+        <title>Giant Sur</title>
+      </Head>
       <div className="flex mx-auto w-screen h-screen bg-wallpaper bg-cover overflow-hidden">
         <MenuBar />
         <Desktop />
