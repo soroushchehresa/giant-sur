@@ -1,5 +1,5 @@
-import { useRef, memo } from 'react'
-import { useStoreActions } from 'easy-peasy'
+import { useRef, memo, MutableRefObject } from 'react'
+import { useStoreActions } from '../../../store'
 
 const dockButtons: { title: string; logo: string }[] = [
   {
@@ -65,82 +65,57 @@ const dockButtons: { title: string; logo: string }[] = [
 ]
 
 const Dock = () => {
-  const dockButtonsWrapper: any = useRef()
-  const closeMenu = useStoreActions((actions: any) => actions.menuBar.closeMenu)
+  const dockButtonsWrapper =
+    useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>
+  const closeMenu = useStoreActions((actions) => actions.menuBar.closeMenu)
 
   const handleItemsMouseEnter = (itemIndex: number) => {
     const expandSize = 8
 
-    dockButtonsWrapper.current.children[
-      itemIndex
-    ].style.width = `${expandSize}rem`
+    const buttonElements = dockButtonsWrapper.current
+      .children as HTMLCollectionOf<HTMLDivElement>
 
-    if (itemIndex > 0 && dockButtonsWrapper.current.children[itemIndex - 1]) {
-      dockButtonsWrapper.current.children[itemIndex - 1].style.width = `${
-        expandSize - 1.5
-      }rem`
+    buttonElements[itemIndex].style.width = `${expandSize}rem`
+
+    if (itemIndex > 0 && buttonElements[itemIndex - 1]) {
+      buttonElements[itemIndex - 1].style.width = `${expandSize - 1.5}rem`
     }
 
-    if (itemIndex > 0 && dockButtonsWrapper.current.children[itemIndex - 2]) {
-      dockButtonsWrapper.current.children[itemIndex - 2].style.width = `${
-        expandSize - 2.5
-      }rem`
+    if (itemIndex > 0 && buttonElements[itemIndex - 2]) {
+      buttonElements[itemIndex - 2].style.width = `${expandSize - 2.5}rem`
     }
 
-    if (
-      itemIndex < dockButtons.length - 1 &&
-      dockButtonsWrapper.current.children[itemIndex + 1]
-    ) {
-      dockButtonsWrapper.current.children[itemIndex + 1].style.width = `${
-        expandSize - 1.5
-      }rem`
+    if (itemIndex < dockButtons.length - 1 && buttonElements[itemIndex + 1]) {
+      buttonElements[itemIndex + 1].style.width = `${expandSize - 1.5}rem`
     }
 
-    if (
-      itemIndex < dockButtons.length - 1 &&
-      dockButtonsWrapper.current.children[itemIndex + 2]
-    ) {
-      dockButtonsWrapper.current.children[itemIndex + 2].style.width = `${
-        expandSize - 2.5
-      }rem`
+    if (itemIndex < dockButtons.length - 1 && buttonElements[itemIndex + 2]) {
+      buttonElements[itemIndex + 2].style.width = `${expandSize - 2.5}rem`
     }
   }
 
   const handleItemsMouseLeave = (itemIndex: number) => {
     const unexpandSize = 4
 
-    dockButtonsWrapper.current.children[
-      itemIndex
-    ].style.width = `${unexpandSize}em`
+    const buttonElements = dockButtonsWrapper.current
+      .children as HTMLCollectionOf<HTMLDivElement>
 
-    if (itemIndex > 0 && dockButtonsWrapper.current.children[itemIndex - 1]) {
-      dockButtonsWrapper.current.children[
-        itemIndex - 1
-      ].style.width = `${unexpandSize}em`
+    buttonElements[itemIndex].style.width = `${unexpandSize}em`
+
+    if (itemIndex > 0 && buttonElements[itemIndex - 1]) {
+      buttonElements[itemIndex - 1].style.width = `${unexpandSize}em`
     }
 
-    if (itemIndex > 0 && dockButtonsWrapper.current.children[itemIndex - 2]) {
-      dockButtonsWrapper.current.children[
-        itemIndex - 2
-      ].style.width = `${unexpandSize}em`
+    if (itemIndex > 0 && buttonElements[itemIndex - 2]) {
+      buttonElements[itemIndex - 2].style.width = `${unexpandSize}em`
     }
 
-    if (
-      itemIndex < dockButtons.length - 1 &&
-      dockButtonsWrapper.current.children[itemIndex + 1]
-    ) {
-      dockButtonsWrapper.current.children[
-        itemIndex + 1
-      ].style.width = `${unexpandSize}em`
+    if (itemIndex < dockButtons.length - 1 && buttonElements[itemIndex + 1]) {
+      buttonElements[itemIndex + 1].style.width = `${unexpandSize}em`
     }
 
-    if (
-      itemIndex < dockButtons.length - 1 &&
-      dockButtonsWrapper.current.children[itemIndex + 2]
-    ) {
-      dockButtonsWrapper.current.children[
-        itemIndex + 2
-      ].style.width = `${unexpandSize}em`
+    if (itemIndex < dockButtons.length - 1 && buttonElements[itemIndex + 2]) {
+      buttonElements[itemIndex + 2].style.width = `${unexpandSize}em`
     }
   }
 

@@ -1,5 +1,5 @@
 import { useState, MouseEvent, memo } from 'react'
-import { useStoreActions } from 'easy-peasy'
+import { useStoreActions } from '../../../store'
 
 interface DesktopItem {
   id: string
@@ -27,7 +27,7 @@ const desktopItems: DesktopItem[] = [
 
 const Desktop = () => {
   const [focusedDesktopItem, setFocusedDesktopItem] = useState<string>('')
-  const closeMenu = useStoreActions((actions: any) => actions.menuBar.closeMenu)
+  const closeMenu = useStoreActions((actions) => actions.menuBar.closeMenu)
 
   const renderItemIcon = (type: string, active: boolean) => {
     let iconSrc: string = ''

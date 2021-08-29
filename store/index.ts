@@ -1,39 +1,60 @@
 import { useMemo } from 'react'
-import { createStore, action, persist } from 'easy-peasy'
+import { createStore, action, persist, Action, Store, createTypedHooks } from 'easy-peasy'
 
-let store: any;
+interface MenuBar {
+  isMenuOpen: boolean,
+  closeMenu: Action<MenuBar>,
+  openMenu: Action<MenuBar>,
+}
 
-const initialState: any = {
+export interface StoreModel {
+  menuBar: MenuBar,
+}
+
+interface InitialState {
+  menuBar: {
+    isMenuOpen: boolean,
+  }
+}
+
+let store: Store | undefined;
+const typedHooks = createTypedHooks<StoreModel>();
+
+export const useStoreActions = typedHooks.useStoreActions;
+export const useStoreDispatch = typedHooks.useStoreDispatch;
+export const useStoreState = typedHooks.useStoreState;
+
+const initialState: InitialState = {
   menuBar: {
     isMenuOpen: false,
   },
 }
 
-const menuBarModel = {
+const menuBarModel: MenuBar= {
   ...initialState.menuBar,
-  closeMenu: action((state: any) => {
+  closeMenu: action((state) => {
     if (state.isMenuOpen) {
       state.isMenuOpen = false
     }
   }),
-  openMenu: action((state: any) => {
+  openMenu: action((state) => {
     if (!state.isMenuOpen) {
       state.isMenuOpen = true
     }
   }),
 }
 
-const storeModel = {
+const storeModel: StoreModel = {
   menuBar: menuBarModel,
 }
 
 function initStore(preloadedState = initialState) {
-  return createStore(persist(storeModel, { allow: [] }), {
+  return createStore<StoreModel, InitialState>(persist(storeModel, { allow: [] }), {
     initialState: preloadedState,
   })
 }
 
-export const initializeStore = (preloadedState: any) => {
+export const initializeStore = (preloadedState: InitialState) => {
   let _store = store ?? initStore(preloadedState)
 
   if (preloadedState && store) {
@@ -50,7 +71,7 @@ export const initializeStore = (preloadedState: any) => {
   return _store
 }
 
-export function useStore(initialState: any) {
+export function useStore(initialState: InitialState) {
   const store = useMemo(() => initializeStore(initialState), [initialState])
   return store
 }

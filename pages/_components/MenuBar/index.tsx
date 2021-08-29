@@ -1,7 +1,7 @@
 import { useState, useEffect, MouseEvent, memo } from 'react'
 import moment from 'moment'
-import { useStoreState, useStoreActions } from 'easy-peasy'
 import Menu from './_components/Menu'
+import { useStoreActions, useStoreState } from '../../../store'
 
 const menuItems: string[] = ['File', 'Edit', 'View', 'Go', 'Window', 'Help']
 
@@ -9,9 +9,9 @@ const MenuBar = () => {
   const [currentActiveMenu, setCurrentActiveMenu] = useState<string>('')
   const [time, setTime] = useState<string>('')
   const [date, setDate] = useState<string>('')
-  const isMenuOpen = useStoreState((state: any) => state.menuBar.isMenuOpen)
-  const closeMenu = useStoreActions((actions: any) => actions.menuBar.closeMenu)
-  const openMenu = useStoreActions((actions: any) => actions.menuBar.openMenu)
+  const isMenuOpen = useStoreState((state) => state.menuBar.isMenuOpen)
+  const closeMenu = useStoreActions((actions) => actions.menuBar.closeMenu)
+  const openMenu = useStoreActions((actions) => actions.menuBar.openMenu)
 
   const calculateDate = () => {
     const currentDate = moment()
@@ -65,7 +65,7 @@ const MenuBar = () => {
 
   return (
     <div
-      onClick={closeMenu}
+      onClick={() => closeMenu}
       className="border-box flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 bg-opacity-40 border-b border-gray-500 z-10"
     >
       <div className="flex items-center">
