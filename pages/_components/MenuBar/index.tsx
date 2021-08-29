@@ -1,6 +1,6 @@
-import { useState, useContext, useEffect, MouseEvent } from 'react'
+import { useState, useEffect, MouseEvent, memo } from 'react'
 import moment from 'moment'
-import { AppContext } from '../../index'
+import { useStoreState, useStoreActions } from 'easy-peasy'
 import Menu from './_components/Menu'
 
 const menuItems: string[] = ['File', 'Edit', 'View', 'Go', 'Window', 'Help']
@@ -9,37 +9,39 @@ const MenuBar = () => {
   const [currentActiveMenu, setCurrentActiveMenu] = useState<string>('')
   const [time, setTime] = useState<string>('')
   const [date, setDate] = useState<string>('')
-  const { desktopClickHash, updateDesktopClickHash } = useContext(AppContext)
+  const isMenuOpen = useStoreState((state: any) => state.menuBar.isMenuOpen)
+  const closeMenu = useStoreActions((actions: any) => actions.menuBar.closeMenu)
+  const openMenu = useStoreActions((actions: any) => actions.menuBar.openMenu)
+
+  const calculateDate = () => {
+    const currentDate = moment()
+    const dayName: string = currentDate.format('dddd').substring(0, 3)
+    const monthName: string = currentDate.format('MMM').substring(0, 3)
+    const dayOfMonth: string = currentDate.format('DD')
+    const newDate = `${dayName} ${monthName} ${dayOfMonth}`
+    setDate((prevDate: string) => {
+      if (prevDate !== newDate) {
+        return newDate
+      }
+      return prevDate
+    })
+  }
+
+  const calculateTime = () => {
+    const currentTime = moment()
+    const hour: string = currentTime.format('hh').substring(0, 3)
+    const minute: string = currentTime.format('mm').substring(0, 3)
+    const type: string = currentTime.format('A')
+    const newTime: string = `${hour}:${minute} ${type}`
+    setTime((prevTime: string) => {
+      if (prevTime !== newTime) {
+        return newTime
+      }
+      return prevTime
+    })
+  }
 
   useEffect(() => {
-    const calculateDate = () => {
-      const currentDate = moment()
-      const dayName: string = currentDate.format('dddd').substring(0, 3)
-      const monthName: string = currentDate.format('MMM').substring(0, 3)
-      const dayOfMonth: string = currentDate.format('DD')
-      const newDate = `${dayName} ${monthName} ${dayOfMonth}`
-      setDate((prevDate: string) => {
-        if (prevDate !== newDate) {
-          return newDate
-        }
-        return prevDate
-      })
-    }
-
-    const calculateTime = () => {
-      const currentTime = moment()
-      const hour: string = currentTime.format('hh').substring(0, 3)
-      const minute: string = currentTime.format('mm').substring(0, 3)
-      const type: string = currentTime.format('A')
-      const newTime: string = `${hour}:${minute} ${type}`
-      setTime((prevTime: string) => {
-        if (prevTime !== newTime) {
-          return newTime
-        }
-        return prevTime
-      })
-    }
-
     calculateDate()
     calculateTime()
 
@@ -50,12 +52,20 @@ const MenuBar = () => {
   }, [])
 
   useEffect(() => {
-    setCurrentActiveMenu('')
-  }, [desktopClickHash])
+    if (!isMenuOpen) {
+      setCurrentActiveMenu('')
+    }
+  }, [isMenuOpen])
+
+  useEffect(() => {
+    if (currentActiveMenu) {
+      openMenu()
+    }
+  }, [currentActiveMenu, openMenu])
 
   return (
     <div
-      onClick={updateDesktopClickHash}
+      onClick={closeMenu}
       className="border-box flex flex-row justify-between w-screen h-6 bg-gray-600 fixed top-0 left-0 bg-opacity-40 border-b border-gray-500 z-10"
     >
       <div className="flex items-center">
@@ -268,4 +278,4 @@ const MenuBar = () => {
   )
 }
 
-export default MenuBar
+export default memo(MenuBar)

@@ -1,5 +1,5 @@
-import { useRef, useContext } from 'react'
-import { AppContext } from '../../index'
+import { useRef, memo } from 'react'
+import { useStoreActions } from 'easy-peasy'
 
 const dockButtons: { title: string; logo: string }[] = [
   {
@@ -66,7 +66,7 @@ const dockButtons: { title: string; logo: string }[] = [
 
 const Dock = () => {
   const dockButtonsWrapper: any = useRef()
-  const { updateDesktopClickHash } = useContext(AppContext)
+  const closeMenu = useStoreActions((actions: any) => actions.menuBar.closeMenu)
 
   const handleItemsMouseEnter = (itemIndex: number) => {
     const expandSize = 8
@@ -145,7 +145,7 @@ const Dock = () => {
   }
 
   const handleItemsClick = () => {
-    updateDesktopClickHash()
+    closeMenu()
   }
 
   return (
@@ -169,4 +169,4 @@ const Dock = () => {
   )
 }
 
-export default Dock
+export default memo(Dock)

@@ -10,9 +10,11 @@ A simple UI clone of [macOS Big Sur](https://www.apple.com/macos/big-sur) for th
 <br>
 
 ### Technologies
-- [React](https://reactjs.org) 
+
+- [React](https://reactjs.org)
 - [Next.js](https://nextjs.org)
 - [TypeScript](https://www.typescriptlang.org)
+- [Easy Peasy](https://easy-peasy.dev)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Docker](https://www.docker.com)
 - [Jest](https://jestjs.io)
@@ -21,6 +23,7 @@ A simple UI clone of [macOS Big Sur](https://www.apple.com/macos/big-sur) for th
 <br>
 
 ### Demo
+
 [**https://giantsur.netlify.app**](https://giantsur.netlify.app)
 
 <br>
@@ -32,4 +35,5 @@ A simple UI clone of [macOS Big Sur](https://www.apple.com/macos/big-sur) for th
 <br>
 
 ### 🚧 Coming soon
+
 This project is under development!

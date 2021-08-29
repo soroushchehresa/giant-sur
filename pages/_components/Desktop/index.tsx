@@ -1,5 +1,5 @@
-import { useState, MouseEvent, useContext } from 'react'
-import { AppContext } from '../../index'
+import { useState, MouseEvent, memo } from 'react'
+import { useStoreActions } from 'easy-peasy'
 
 interface DesktopItem {
   id: string
@@ -27,7 +27,7 @@ const desktopItems: DesktopItem[] = [
 
 const Desktop = () => {
   const [focusedDesktopItem, setFocusedDesktopItem] = useState<string>('')
-  const { updateDesktopClickHash } = useContext(AppContext)
+  const closeMenu = useStoreActions((actions: any) => actions.menuBar.closeMenu)
 
   const renderItemIcon = (type: string, active: boolean) => {
     let iconSrc: string = ''
@@ -60,12 +60,12 @@ const Desktop = () => {
   const handleClickDesktopItems = (e: MouseEvent<HTMLElement>, id: string) => {
     e.stopPropagation()
     setFocusedDesktopItem(id)
-    updateDesktopClickHash()
+    closeMenu()
   }
 
   const handleClickAroundDesktopItems = () => {
     setFocusedDesktopItem('')
-    updateDesktopClickHash()
+    closeMenu()
   }
 
   return (
@@ -94,4 +94,4 @@ const Desktop = () => {
   )
 }
 
-export default Desktop
+export default memo(Desktop)
